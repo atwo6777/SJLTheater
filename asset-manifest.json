@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/SJLTheater/static/css/main.f74f69f8.chunk.css",
-    "main.js": "/SJLTheater/static/js/main.cba4a284.chunk.js",
-    "main.js.map": "/SJLTheater/static/js/main.cba4a284.chunk.js.map",
+    "main.css": "/SJLTheater/static/css/main.6e3585bb.chunk.css",
+    "main.js": "/SJLTheater/static/js/main.356c4480.chunk.js",
+    "main.js.map": "/SJLTheater/static/js/main.356c4480.chunk.js.map",
     "runtime-main.js": "/SJLTheater/static/js/runtime-main.7ba3efd2.js",
     "runtime-main.js.map": "/SJLTheater/static/js/runtime-main.7ba3efd2.js.map",
-    "static/js/2.8865053f.chunk.js": "/SJLTheater/static/js/2.8865053f.chunk.js",
-    "static/js/2.8865053f.chunk.js.map": "/SJLTheater/static/js/2.8865053f.chunk.js.map",
+    "static/js/2.4581893c.chunk.js": "/SJLTheater/static/js/2.4581893c.chunk.js",
+    "static/js/2.4581893c.chunk.js.map": "/SJLTheater/static/js/2.4581893c.chunk.js.map",
     "index.html": "/SJLTheater/index.html",
-    "precache-manifest.563d81bcb4383bff8ac7d62f5c24ff3c.js": "/SJLTheater/precache-manifest.563d81bcb4383bff8ac7d62f5c24ff3c.js",
+    "precache-manifest.a0db1e73ddb90ed51550d02657c48c86.js": "/SJLTheater/precache-manifest.a0db1e73ddb90ed51550d02657c48c86.js",
     "service-worker.js": "/SJLTheater/service-worker.js",
-    "static/css/main.f74f69f8.chunk.css.map": "/SJLTheater/static/css/main.f74f69f8.chunk.css.map",
-    "static/js/2.8865053f.chunk.js.LICENSE.txt": "/SJLTheater/static/js/2.8865053f.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/SJLTheater/static/media/logo.ee7cd8ed.svg"
+    "static/css/main.6e3585bb.chunk.css.map": "/SJLTheater/static/css/main.6e3585bb.chunk.css.map",
+    "static/js/2.4581893c.chunk.js.LICENSE.txt": "/SJLTheater/static/js/2.4581893c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7ba3efd2.js",
-    "static/js/2.8865053f.chunk.js",
-    "static/css/main.f74f69f8.chunk.css",
-    "static/js/main.cba4a284.chunk.js"
+    "static/js/2.4581893c.chunk.js",
+    "static/css/main.6e3585bb.chunk.css",
+    "static/js/main.356c4480.chunk.js"
   ]
 }
