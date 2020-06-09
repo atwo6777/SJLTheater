@@ -1,0 +1,7 @@
+.homepage {
+  padding: 30px 30px;
+  padding-top: 75px;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}

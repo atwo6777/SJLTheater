@@ -8,18 +8,18 @@ function Slideshow(props) {
       <div className="slideshowParent">
         <div className="slideshow">
           <div className="front">
-            <img src={props.front}></img>
+            <img src={props.cube.front}></img>
           </div>
           <div className="back">
-            <img src={props.back}></img>
+            <img src={props.cube.back}></img>
           </div>
 
           <div className="top">
-            <img src={props.top}></img>
+            <img src={props.cube.top}></img>
           </div>
           <div className="right">Right</div>
           <div className="bottom">
-            <img src={props.bottom}></img>
+            <img src={props.cube.bottom}></img>
           </div>
           <div className="left">Left</div>
         </div>

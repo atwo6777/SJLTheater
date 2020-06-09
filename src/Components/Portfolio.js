@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import _ from "lodash";
+import $ from "jquery";
+
+import "./Portfolio.css";
+import "../Container.css";
 
 import showList from "./PortfolioShowList.json";
 function Portfolio() {
@@ -9,9 +13,15 @@ function Portfolio() {
     setSelectedShow(show);
   }
 
+  useEffect(() => {
+    if (selectedShow !== null) {
+      $(".selectedShow").addClass("fadeIn");
+    }
+  }, [selectedShow]);
+
   return (
-    <div className="portfolio">
-      <h3>Portfolio</h3>
+    <div className="portfolioPageContainer">
+      <h2>Portfolio</h2>
       {selectedShow ? (
         <div className="selectedShow">
           <div className="selectedShowInfo">
@@ -45,20 +55,24 @@ function Portfolio() {
             <div>{"Photo credit " + selectedShow.photoCredit}</div>
           ) : null}
         </div>
-      ) : null}
-      <div>
-        {_.map(showList, (show) => (
-          <div className="portfolioShow" key={show.title}>
-            <img
-              onClick={() => {
-                loadShow(show);
-              }}
-              alt={show.thumbnail}
-              src={show.thumbnail}
-            ></img>
-          </div>
-        ))}
-      </div>
+      ) : (
+        <div className="portfolio">
+          {_.map(showList, (show) => (
+            <div className="portfolioShow" key={show.title}>
+              <div className="title">{show.title}</div>
+              <div className="thumbnail zoom">
+                <img
+                  onClick={() => {
+                    loadShow(show);
+                  }}
+                  alt={show.thumbnail}
+                  src={show.thumbnail}
+                ></img>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

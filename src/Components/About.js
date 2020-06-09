@@ -1,9 +1,10 @@
 import React from "react";
+import "./About.css";
 
 function About() {
   return (
-    <div>
-      <h3>About</h3>
+    <div className="about">
+      <h2>About</h2>
       <p>
         Leverage agile frameworks to provide a robust synopsis for high level
         overviews. Iterative approaches to corporate strategy foster
