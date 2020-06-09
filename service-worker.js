@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SJLTheater/precache-manifest.ab5893c6639aa60ff780bfc404adf8fd.js"
+  "/SJLTheater/precache-manifest.bd12e8db7df753de584462ad9e3c5a58.js"
 );
 
 self.addEventListener('message', (event) => {
