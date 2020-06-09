@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import $ from "jquery";
 
-import About from "./Components/About";
 import "./Container.css";
+import About from "./Components/About";
 import Portfolio from "./Components/Portfolio.js";
 import Contact from "./Components/Contact.js";
 import Homepage from "./Components/Hompage.js";
@@ -59,9 +59,7 @@ function Container() {
   }
 
   useEffect(() => {
-    if (loadedSection !== null) {
-      $(".portfolio").addClass("fadeIn");
-    }
+    $(".portfolio").addClass("fadeIn");
   }, [loadedSection]);
 
   return (
@@ -73,7 +71,7 @@ function Container() {
           }}
           id="Logo"
           alt="Logo"
-          src={"images/Logo.png"}
+          src={"public/Logo.png"}
         ></img>
         <div className="flex navigation">
           <a
