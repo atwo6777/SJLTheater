@@ -8,12 +8,9 @@ import Contact from "./Components/Contact.js";
 import Homepage from "./Components/Hompage.js";
 
 function Container() {
-  const [loadedSection, setLoadedSection] = useState(
-    <Homepage loadSection={loadSection} />
-  );
+  const [loadedSection, setLoadedSection] = useState(null);
 
   function loadSection(type) {
-    console.log(type);
     switch (type) {
       case "Homepage":
       default:
@@ -23,7 +20,8 @@ function Container() {
         $("#bottomGradient")
           .addClass("secondaryPageBottomGradient")
           .removeClass("secondaryPageBottomGradient");
-        setLoadedSection(<Homepage loadSection={loadSection} />);
+        $(".homepage").removeClass("fadeOut");
+        setLoadedSection(null);
         break;
 
       // all options after this add the homepage
@@ -35,8 +33,26 @@ function Container() {
         $("#bottomGradient")
           .addClass("secondaryPageBottomGradient")
           .removeClass("secondaryPageBottomGradient");
+        $(".homepage").addClass("fadeOut");
         setLoadedSection(<About />);
         break;
+      case "CubePortfolio":
+        $(".spinner").addClass("spinnerActivated");
+        setTimeout(() => {
+          $("#topGradient")
+            .addClass("secondaryPageTopGradient")
+            .removeClass("homepageTopGradient");
+          $("#bottomGradient")
+            .addClass("secondaryPageBottomGradient")
+            .removeClass("secondaryPageBottomGradient");
+          setLoadedSection(<Portfolio />);
+          $(".homepage").addClass("fadeOut");
+          setTimeout(() => {
+            $(".spinner").removeClass("spinnerActivated");
+          }, 1500);
+        }, 3500);
+        break;
+
       case "Portfolio":
         $("#topGradient")
           .addClass("secondaryPageTopGradient")
@@ -44,7 +60,9 @@ function Container() {
         $("#bottomGradient")
           .addClass("secondaryPageBottomGradient")
           .removeClass("secondaryPageBottomGradient");
+        $(".homepage").addClass("fadeOut");
         setLoadedSection(<Portfolio />);
+
         break;
       case "Contact":
         $("#topGradient")
@@ -53,6 +71,7 @@ function Container() {
         $("#bottomGradient")
           .addClass("secondaryPageBottomGradient")
           .removeClass("secondaryPageBottomGradient");
+        $(".homepage").addClass("fadeOut");
         setLoadedSection(<Contact />);
         break;
     }
@@ -71,34 +90,63 @@ function Container() {
           }}
           id="Logo"
           alt="Logo"
-          src={"public/Logo.png"}
+          src={process.env.PUBLIC_URL + "images/Logo.png"}
         ></img>
         <div className="flex navigation">
-          <a
+          <button
+            className="transparent"
             onClick={() => {
               loadSection("About");
             }}
           >
             About
-          </a>
-          <a
+          </button>
+          <button
+            className="transparent"
             onClick={() => {
-              loadSection("Portfolio");
+              if (loadedSection === null) {
+                loadSection("CubePortfolio");
+              } else {
+                loadSection("Portfolio");
+              }
             }}
           >
             Portfolio
-          </a>
-          <a
+          </button>
+          <button
+            className="transparent"
             onClick={() => {
               loadSection("Contact");
             }}
           >
             Contact
-          </a>
+          </button>
         </div>
       </div>
 
-      <div className="Body">{loadedSection}</div>
+      <div className="Body">
+        <Homepage loadSection={loadSection} />
+        <div style={{ minHeight: "100%" }}>{loadedSection}</div>
+        <div className="Footer">
+          <p>
+            Production photo's are the property of the persons/entities
+            producing, directing, designing, photographing, and herein-by
+            affiliated with those parties.
+          </p>
+          <p>
+            Photo's attributed to the persons who took the photos at request.
+          </p>
+          <p>
+            Stephanie Lutz does not own the photos other than those Stephanie
+            Lutz personally captured.
+          </p>
+          <p>
+            Copyright claimants pursue noted publisher of website for
+            resolution, compensation, and such actions.
+          </p>
+          <p>Lighting designs © Stephanie Lutz</p>
+        </div>
+      </div>
 
       <div id="topGradient" className="homepageTopGradient" />
       <div id="bottomGradient" className="homepageBottomGradient" />

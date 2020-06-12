@@ -1,7 +1,7 @@
 {
   "name": "sjltheater",
   "version": "0.1.0",
-  "homepage": "https://atwo6777.github.io/SJLTheater/",
+  "homepage": "https://atwo6777.github.io/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.14",

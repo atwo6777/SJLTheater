@@ -1,14 +1,14 @@
 [
   {
-    "front": "images/CubeImages/allisonpourswine.jpg",
-    "top": "images/CubeImages/temp.jpg",
-    "back": "images/CubeImages/temp3.jpg",
-    "bottom": "images/CubeImages/temptop.jpg"
+    "front": "images/CubeImages/CH left.jpg",
+    "top": "images/CubeImages/Hellfire Left.jpg",
+    "back": "images/CubeImages/Little Women Left.jpg",
+    "bottom": "images/CubeImages/Open Left.jpg"
   },
   {
-    "front": "images/CubeImages/allisonpourswine.jpg",
-    "top": "images/CubeImages/temp.jpg",
-    "back": "images/CubeImages/temp3.jpg",
-    "bottom": "images/CubeImages/temptop.jpg"
+    "front": "images/CubeImages/CH right.jpg",
+    "top": "images/CubeImages/Hellfire Right.jpg",
+    "back": "images/CubeImages/Little Women Right.jpg",
+    "bottom": "images/CubeImages/Open Right.jpg"
   }
 ]

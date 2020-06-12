@@ -1,7 +1,21 @@
 .homepage {
   padding: 30px 30px;
   padding-top: 75px;
+  min-height: 275px;
+
   text-align: center;
   display: flex;
   justify-content: space-evenly;
+  position: absolute;
+  width: 100%;
+}
+
+.titleCard {
+  border: 1px black solid;
+  padding: 15px;
+  height: 100px;
+}
+
+.clickableContainer {
+  width: 175px;
 }

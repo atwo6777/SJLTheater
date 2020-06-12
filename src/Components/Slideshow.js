@@ -4,24 +4,21 @@ import "./Slideshow.css";
 
 function Slideshow(props) {
   return (
-    <div>
-      <div className="slideshowParent">
-        <div className="slideshow">
-          <div className="front">
-            <img src={props.cube.front}></img>
-          </div>
-          <div className="back">
-            <img src={props.cube.back}></img>
-          </div>
-
-          <div className="top">
-            <img src={props.cube.top}></img>
-          </div>
-          <div className="right">Right</div>
-          <div className="bottom">
-            <img src={props.cube.bottom}></img>
-          </div>
-          <div className="left">Left</div>
+    <div className="stage" style={{ width: "120px", height: "120px" }}>
+      <div className="spinner">
+        <div className="face1 cubeFace">
+          <img alt={props.cube.front} src={props.cube.front} />
+        </div>
+        <div className="face2 cubeFace"></div>
+        <div className="face3 cubeFace">
+          <img alt={props.cube.top} src={props.cube.top} />
+        </div>
+        <div className="face4 cubeFace">
+          <img src={props.cube.back} alt={props.cube.back} />
+        </div>
+        <div className="face5 cubeFace"></div>
+        <div className="face6 cubeFace">
+          <img src={props.cube.bottom} alt={props.cube.bottom} />
         </div>
       </div>
     </div>

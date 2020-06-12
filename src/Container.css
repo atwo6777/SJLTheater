@@ -71,6 +71,7 @@ h2 {
 button {
   background-color: lightgray;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -90,14 +91,30 @@ button:hover {
 
 .Body {
   position: absolute;
-  height: 70%;
+  height: 77%;
   width: 100%;
   overflow-y: auto;
-  bottom: 5px;
+  overflow-x: hidden;
+}
+
+.Footer {
+  margin: 50px;
+  margin-top: 60px;
+  text-align: center;
+}
+.Footer p {
+  margin: 0;
+}
+
+.transparent {
+  background: transparent;
+  border: 0;
+  font-size: 18px;
 }
 
 #Logo {
   height: 70%;
+  cursor: pointer;
 }
 
 .navigation {
@@ -124,6 +141,12 @@ img {
 .fadeIn {
   opacity: 1 !important;
   transition: opacity 2s;
+}
+
+.fadeOut {
+  opacity: 0 !important;
+  transition: opacity 2s;
+  z-index: -1;
 }
 
 .Body::-webkit-scrollbar,

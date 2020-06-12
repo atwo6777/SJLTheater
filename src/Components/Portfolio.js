@@ -16,6 +16,8 @@ function Portfolio() {
   useEffect(() => {
     if (selectedShow !== null) {
       $(".selectedShow").addClass("fadeIn");
+    } else {
+      $(".portfolio").addClass("fadeIn");
     }
   }, [selectedShow]);
 
@@ -23,38 +25,54 @@ function Portfolio() {
     <div className="portfolioPageContainer">
       <h2>Portfolio</h2>
       {selectedShow ? (
-        <div className="selectedShow">
-          <div className="selectedShowInfo">
-            {selectedShow.title ? <div>{selectedShow.title}</div> : null}
-            {selectedShow.by ? <div>{"By " + selectedShow.by}</div> : null}
-            {selectedShow.custom ? <div>{selectedShow.custom}</div> : null}
-            {selectedShow.director ? (
-              <div>{"Dir. " + selectedShow.director}</div>
+        <>
+          <button
+            onClick={() => {
+              setSelectedShow(null);
+            }}
+            className="portfolioCloseButton"
+          >
+            <img alt="X" src={"images/close.png"}></img>
+          </button>
+          <div className="selectedShow">
+            <div className="selectedShowInfo">
+              {selectedShow.title ? <div>{selectedShow.title}</div> : null}
+              {selectedShow.by ? <div>{"By " + selectedShow.by}</div> : null}
+              {selectedShow.custom ? (
+                <div
+                  dangerouslySetInnerHTML={{ __html: selectedShow.custom }}
+                />
+              ) : null}
+              {selectedShow.director ? (
+                <div>{"Dir. " + selectedShow.director}</div>
+              ) : null}
+              {selectedShow.scenicDesigner ? (
+                <div>{"Scenic Designer " + selectedShow.scenicDesigner}</div>
+              ) : null}
+              {selectedShow.soundBy ? (
+                <div>{"Sound by " + selectedShow.soundBy}</div>
+              ) : null}
+              {selectedShow.projectionDesigner ? (
+                <div>
+                  {"Projection Designer " + selectedShow.projectionDesigner}
+                </div>
+              ) : null}
+              {selectedShow.properties ? (
+                <div>{"Properties " + selectedShow.properties}</div>
+              ) : null}
+              {selectedShow.location ? (
+                <div>{selectedShow.location}</div>
+              ) : null}
+              {selectedShow.date ? <div>{selectedShow.date}</div> : null}
+            </div>
+            {_.map(selectedShow.images, (image) => (
+              <img key={image} alt={image} src={image}></img>
+            ))}
+            {selectedShow.photoCredit ? (
+              <div>{"Photo credit " + selectedShow.photoCredit}</div>
             ) : null}
-            {selectedShow.scenicDesigner ? (
-              <div>{"Scenic Designer " + selectedShow.scenicDesigner}</div>
-            ) : null}
-            {selectedShow.soundBy ? (
-              <div>{"Sound by " + selectedShow.soundBy}</div>
-            ) : null}
-            {selectedShow.projectionDesigner ? (
-              <div>
-                {"Projection Designer " + selectedShow.projectionDesigner}
-              </div>
-            ) : null}
-            {selectedShow.properties ? (
-              <div>{"Properties " + selectedShow.properties}</div>
-            ) : null}
-            {selectedShow.location ? <div>{selectedShow.location}</div> : null}
-            {selectedShow.date ? <div>{selectedShow.date}</div> : null}
           </div>
-          {_.map(selectedShow.images, (image) => (
-            <img key={image} alt={image} src={image}></img>
-          ))}
-          {selectedShow.photoCredit ? (
-            <div>{"Photo credit " + selectedShow.photoCredit}</div>
-          ) : null}
-        </div>
+        </>
       ) : (
         <div className="portfolio">
           {_.map(showList, (show) => (

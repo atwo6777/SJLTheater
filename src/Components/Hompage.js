@@ -6,9 +6,10 @@ import Slideshow from "./Slideshow.js";
 import CubeList from "./HomepageImages.json";
 
 function Homepage(props) {
-  const [windowWidth, setWindowWidth] = useState(320);
+  const [windowWidth, setWindowWidth] = useState();
 
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -28,14 +29,16 @@ function Homepage(props) {
       <div
         className="clickableContainer"
         onClick={() => {
-          props.loadSection("Portfolio");
+          props.loadSection("CubePortfolio");
         }}
       >
-        <Slideshow cube={CubeList[0]}></Slideshow>
+        <div>
+          <Slideshow cube={CubeList[0]}></Slideshow>
+        </div>
       </div>
       {windowWidth > 768 ? (
         <>
-          <div>
+          <div className="titleCard">
             <h2>Stephanie Lutz</h2>
             <h2>Lighting Designer</h2>
           </div>
@@ -43,10 +46,12 @@ function Homepage(props) {
           <div
             className="clickableContainer"
             onClick={() => {
-              props.loadSection("Portfolio");
+              props.loadSection("CubePortfolio");
             }}
           >
-            <Slideshow cube={CubeList[1]}></Slideshow>
+            <div id="cubeRight">
+              <Slideshow cube={CubeList[1]}></Slideshow>
+            </div>
           </div>
         </>
       ) : null}
