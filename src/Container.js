@@ -79,6 +79,7 @@ function Container() {
 
   useEffect(() => {
     $(".portfolio").addClass("fadeIn");
+    $(".contactBody").addClass("fadeIn");
   }, [loadedSection]);
 
   return (
@@ -119,7 +120,7 @@ function Container() {
               loadSection("Contact");
             }}
           >
-            Contact
+            Contact/Resume
           </button>
         </div>
       </div>

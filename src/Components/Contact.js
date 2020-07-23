@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./Contact.css";
+import Resume from "../Resume.pdf";
 
 function Contact() {
   const [isCopied, setIsCopied] = useState(false);
@@ -32,6 +33,16 @@ function Contact() {
             Email
           </a>
         </button>
+        <button className="contactButton">
+          <a className="links" href={Resume} download="Resume.pdf">
+            Download Resume
+          </a>
+        </button>
+      </div>
+      <div className="resume">
+        <a className="links" href={Resume} download="Resume.pdf">
+          <img alt="resume" src={"images/Resume.png"} />
+        </a>
       </div>
     </div>
   );

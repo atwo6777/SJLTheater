@@ -4,6 +4,10 @@
   margin-top: 30px;
 }
 
+.portfolioTitle {
+  margin-top: 10%;
+}
+
 .portfolioShow img {
   height: 200px;
   min-width: 200px;
@@ -67,8 +71,7 @@
 
   position: absolute;
 
-  top: 10px;
-  right: 5px;
+  right: 1%;
 }
 
 @media screen and (min-width: 768px) {
@@ -76,5 +79,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .portfolioTitle {
+    margin-top: 1%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio {
+    text-align: center;
   }
 }
