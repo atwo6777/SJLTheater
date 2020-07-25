@@ -1,56 +1,57 @@
 .spinner div {
   background: rgb(122, 122, 122);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
   position: absolute;
-  width: 175px;
-  height: 233px;
+  width: 100%;
+  height: 100%;
 
   text-align: center;
   line-height: 120px;
   font-size: 100px;
 }
 
-.spinner .face1 {
+.stage {
+  --faceWidth: calc(175px / 2);
+  --faceHeight: calc(233px / 2);
+  /* controls the size of the cubes */
   width: 175px;
   height: 233px;
+}
+
+.spinner {
+  height: 100%;
+}
+
+.spinner .face1 {
   -webkit-transform: translateZ(60px);
   -ms-transform: translateZ(60px);
-  transform: translateZ(116px);
+  transform: translateZ(var(--faceHeight));
 }
 .spinner .face2 {
-  width: 233px;
-  height: 233px;
+  width: 133%;
   border: 1px solid grey;
   -webkit-transform: rotateY(90deg) translateZ(60px);
   -ms-transform: rotateY(90deg) translateZ(60px);
-  transform: rotateY(90deg) scaleX(-1) translateZ(58px);
+  transform: rotateY(90deg) scaleX(-1) translateZ(var(--faceWidth));
 }
 .spinner .face3 {
-  width: 175px;
-  height: 233px;
-  transform: rotateX(90deg) translateZ(116px);
+  transform: rotateX(90deg) translateZ(var(--faceHeight));
 }
 .spinner .face4 {
   -webkit-transform: rotateY(180deg) translateZ(60px);
   -ms-transform: rotateY(180deg) translateZ(60px);
-  transform: rotateY(180deg) rotateZ(180deg) translateZ(116px);
+  transform: rotateY(180deg) rotateZ(180deg) translateZ(var(--faceHeight));
 }
 .spinner .face5 {
-  width: 233px;
-  height: 233px;
+  width: 133%;
   border: 1px solid grey;
   -webkit-transform: rotateY(-90deg) translateZ(60px);
   -ms-transform: rotateY(-90deg) translateZ(60px);
-  transform: rotateY(-90deg) translateZ(117px);
+  transform: rotateY(-90deg) translateZ(var(--faceHeight));
 }
 .spinner .face6 {
   -webkit-transform: rotateX(-90deg) translateZ(60px);
   -ms-transform: rotateX(-90deg) translateZ(60px);
-  transform: rotateX(-90deg) translateZ(116px);
+  transform: rotateX(-90deg) translateZ(var(--faceHeight));
 }
 
 .spinner {
@@ -59,9 +60,9 @@
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transform-origin: 87px 116px 0;
-  -ms-transform-origin: 87px 116px 0;
-  transform-origin: 87px 116px 0;
+  -webkit-transform-origin: 87px var(--faceHeight) 0;
+  -ms-transform-origin: 87px var(--faceHeight) 0;
+  transform-origin: 87px var(--faceHeight) 0;
 }
 
 .spinnerActivated {
@@ -96,6 +97,55 @@
   }
   #second .spinnerActivated .face5 {
     transform: rotateY(-90deg) translateX(60px);
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  .stage {
+    width: 250px;
+    height: 332px;
+    --faceHeight: calc(332px / 2);
+    --faceWidth: calc(250px / 2);
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 599px) {
+  .stage {
+    width: 300px;
+    height: 400px;
+    --faceHeight: calc(400px / 2);
+    --faceWidth: calc(300px / 2);
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 766px) {
+  .stage {
+    width: 475px;
+    height: 632px;
+    --faceHeight: calc(632px / 2);
+    --faceWidth: calc(475px / 2);
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1199px) {
+  .stage {
+    width: 250px;
+    height: 332px;
+    --faceHeight: calc(332px / 2);
+    --faceWidth: calc(250px / 2);
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .stage {
+    width: 400px;
+    height: 532px;
+    --faceHeight: calc(532px / 2);
+    --faceWidth: calc(400px / 2);
+    margin-top: 5%;
   }
 }
 

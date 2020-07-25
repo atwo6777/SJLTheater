@@ -4,7 +4,7 @@ import "./Slideshow.css";
 
 function Slideshow(props) {
   return (
-    <div className="stage" style={{ width: "120px", height: "120px" }}>
+    <div className="stage">
       <div className="spinner">
         <div className="face1 cubeFace">
           <img alt={props.cube.front} src={props.cube.front} />
